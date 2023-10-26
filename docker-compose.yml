@@ -1,0 +1,15 @@
+version: "4.24.2"
+services:
+  app:  
+    build: .
+    ports:
+      - "4000:4000" 
+    links:
+      - monguoDB 
+  monguoDB:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=walver1  
+      - MONGO_INITDB_ROOT_PASSWORD=1234 
